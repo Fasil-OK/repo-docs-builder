@@ -37,7 +37,7 @@ looks authoritative, nobody maintains it, and the next reader trusts it.
 | `docs/DATA_FLOW.md` | queues, event buses, scheduled jobs, pipelines, or calls across several services |
 | `docs/SECURITY.md` | authentication, sessions or tokens, permissions, secrets, or personal data |
 | `docs/DEPLOYMENT.md` | a Dockerfile, a deploy job in CI, infrastructure code, or hosting-platform config |
-| `CHANGELOG.md` | a published or versioned package, or git tags |
+| `CHANGELOG.md` | git tags, or a package that is actually published (a publish step in CI or scripts). A version field alone is not evidence: nearly every manifest has one |
 | `CONTRIBUTING.md` | several contributors in the git history, or a licence that invites outside work |
 | nested `AGENTS.md` | a sub-area (say `frontend/` and `backend/`) whose stack or conventions differ from the root |
 
@@ -115,6 +115,14 @@ Never edit an existing log doc.
 what the stack usually uses. An agent will run the commands in `AGENTS.md` literally, so a
 plausible wrong command costs more than a missing one. Where you could not find something
 that the doc needs, write `TODO: <what is missing>` instead of a guess.
+
+**Record the problems you find; do not fix them.** Checking commands against the repo often
+turns up something broken: a test script that fails, a build step with nothing to install
+from. That is exactly what the next reader needs to know, and it is lost if it only appears
+in your final message. Add it to `KNOWN_ISSUES.md` when you are creating that file, marked
+as found during this pass and as either reproduced or only read from the code, so nobody
+mistakes it for a report from the team. If `KNOWN_ISSUES.md` already exists or the tier has
+none, put it in the report instead. Leave the code alone: the task is documentation.
 
 **`AGENTS.md` is the single source of agent instructions.** It is the file most coding
 agents read natively. `CLAUDE.md` holds one line, `@AGENTS.md`, so that Claude Code loads

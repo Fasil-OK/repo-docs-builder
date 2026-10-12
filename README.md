@@ -105,7 +105,7 @@ The tier is a ceiling, not a checklist. Inside it, each doc needs evidence:
 | `docs/DATA_FLOW.md` | queues, event buses, scheduled jobs, pipelines, or calls across several services |
 | `docs/SECURITY.md` | authentication, sessions or tokens, permissions, secrets, or personal data |
 | `docs/DEPLOYMENT.md` | a Dockerfile, a deploy job in CI, infrastructure code, or hosting config |
-| `CHANGELOG.md` | a published or versioned package, or git tags |
+| `CHANGELOG.md` | git tags, or a package that is actually published (a version field alone does not count) |
 | `CONTRIBUTING.md` | several contributors in the git history, or a licence that invites outside work |
 | nested `AGENTS.md` | a sub-area whose stack or conventions differ from the root |
 
@@ -118,6 +118,7 @@ Docs come in two kinds, and the skill treats them differently:
 
 - **No overwriting.** An existing doc is kept. Additions are shown to you and applied only if you agree.
 - **No guessed commands.** If it cannot find something a doc needs, it writes `TODO: <what is missing>`.
+- **Problems get recorded, not fixed.** Anything broken that it finds during the survey goes into `KNOWN_ISSUES.md`, marked as reproduced or only read from the code.
 - **No secrets.** It reads `.env.example`, never `.env`. Docs name variables, never values.
 - **Short `AGENTS.md`.** Under a hundred lines, because it is loaded into every agent session.
 - **Each fact once.** Setup lives in the README; other docs link to it.

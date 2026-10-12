@@ -147,7 +147,9 @@ recorded decision; do not invent the rationale.
 ```
 
 Seed from `FIXME`, `BUG` and `XXX` comments and from skipped or expected-failure tests,
-citing the file and line.
+citing the file and line. Add any problem you found yourself during the survey, and say in
+the entry that it came from this pass and whether you reproduced it or only read it in the
+code.
 
 ## docs/ARCHITECTURE.md
 
