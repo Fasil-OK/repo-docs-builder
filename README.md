@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="assets/logo.svg" width="112" alt="repo-docs logo">
+  <img src="assets/logo.webp" width="240" alt="repo-docs-builder logo">
 </p>
 
-<h1 align="center">repo-docs</h1>
+<h1 align="center">repo-docs-builder</h1>
 
 <p align="center">
   <strong>An agent skill that writes the docs your repo actually needs,<br>and skips the ones it would have to make up.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Fasil-OK/repo-docs/stargazers"><img src="https://img.shields.io/github/stars/Fasil-OK/repo-docs?style=flat" alt="GitHub stars"></a>
+  <a href="https://github.com/Fasil-OK/repo-docs-builder/stargazers"><img src="https://img.shields.io/github/stars/Fasil-OK/repo-docs-builder?style=flat" alt="GitHub stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent%20Skills-compatible-4F46E5" alt="Agent Skills compatible"></a>
 </p>
@@ -31,7 +31,7 @@ Ask a coding agent to "document this repo" and you usually get one of two things
 README, or a pile of files with plausible commands nobody ran and sections that say "TBD".
 The second is worse, because the next person, or the next agent, trusts it.
 
-`repo-docs` gives the agent a fixed set of documents, three sizes to choose from, and one
+`repo-docs-builder` gives the agent a fixed set of documents, three sizes to choose from, and one
 rule: **a doc is written only when the repository has evidence for it.**
 
 - **Reads before it writes.** Commands come from your manifests, scripts and CI, not from what the stack usually uses.
@@ -41,24 +41,24 @@ rule: **a doc is written only when the repository has evidence for it.**
 
 ## Install
 
-`repo-docs` is a plain [Agent Skill](https://agentskills.io): a folder with a `SKILL.md`. It
+`repo-docs-builder` is a plain [Agent Skill](https://agentskills.io): a folder with a `SKILL.md`. It
 works in any [agent that supports the format](https://agentskills.io/clients), including
 Claude Code, Codex, Cursor, Gemini CLI and GitHub Copilot.
 
 **Any agent**, with the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add Fasil-OK/repo-docs
+npx skills add Fasil-OK/repo-docs-builder
 ```
 
 **Claude Code**, as a plugin:
 
 ```
-/plugin marketplace add Fasil-OK/repo-docs
-/plugin install repo-docs@repo-docs
+/plugin marketplace add Fasil-OK/repo-docs-builder
+/plugin install repo-docs-builder@repo-docs-builder
 ```
 
-**Manual:** copy the [`skills/repo-docs`](skills/repo-docs) folder into your agent's skills
+**Manual:** copy the [`skills/repo-docs-builder`](skills/repo-docs-builder) folder into your agent's skills
 directory, for example `~/.claude/skills/`.
 
 ## Usage
@@ -66,7 +66,7 @@ directory, for example `~/.claude/skills/`.
 Name a tier:
 
 ```
-/repo-docs standard
+/repo-docs-builder standard
 ```
 
 Or just ask:
@@ -79,7 +79,7 @@ Or just ask:
 
 If you give no tier, the agent asks and recommends `standard`. In a non-interactive run it
 uses `standard` and says so in its report. Installed as a Claude Code plugin, the command is
-`/repo-docs:repo-docs`.
+`/repo-docs-builder:repo-docs-builder`.
 
 ## Tiers
 
@@ -126,7 +126,7 @@ Docs come in two kinds, and the skill treats them differently:
 
 ## Example
 
-The report from a test run of `/repo-docs full` on a small Express API that already had a
+The report from a test run of `/repo-docs-builder full` on a small Express API that already had a
 hand-written `README.md` and `CLAUDE.md`:
 
 | File | Action | Note |
@@ -173,7 +173,7 @@ seconds longer on average. Each test ran once, so there is no measure of run-to-
 ## Repository layout
 
 ```
-skills/repo-docs/
+skills/repo-docs-builder/
 ├── SKILL.md              tiers, workflow and rules
 └── references/
     └── templates.md      an outline for each doc

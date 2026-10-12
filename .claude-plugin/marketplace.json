@@ -1,6 +1,6 @@
 {
-  "name": "repo-docs",
-  "id": "repo-docs",
+  "name": "repo-docs-builder",
+  "id": "repo-docs-builder",
   "owner": {
     "name": "Fasil-OK"
   },
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "repo-docs",
+      "name": "repo-docs-builder",
       "source": "./",
       "description": "Writes the documentation a repo actually needs (AGENTS.md, README, handoff and decision logs, architecture, API and schema docs) by analyzing the code. Three tiers: basic, standard, full.",
       "version": "1.0.0",

@@ -1,9 +1,9 @@
 ---
-name: repo-docs
+name: repo-docs-builder
 description: Create or refresh a project's documentation set (AGENTS.md, CLAUDE.md, README, HANDOFF, TASKS, DECISIONS, KNOWN_ISSUES, docs/ARCHITECTURE, TESTING, API reference and more) by analyzing the repository, or scaffold starter docs for an empty or brand-new project. Offers three tiers - basic, standard, full. Use this whenever the user asks to document a repo, set up or initialize project docs, generate AGENTS.md or CLAUDE.md, add handoff / progress / decision / known-issues files, bootstrap docs for a new project, or says things like "create the docs", "document this codebase", "set up the project files" - even if they name no tier and no specific file.
 ---
 
-# Repo Docs
+# Repo Docs Builder
 
 Write the documentation a project needs so that a person or a coding agent (any tool, not
 just one vendor's) can pick it up cold: what it is, how to run it, how it is built, where
